@@ -1,0 +1,21 @@
+@mixin size($w, $h, $bdr:unset, $bxs: 5px 5px 30px wheat) {
+    width: $w;
+    height: $h;
+    border-radius: $bdr;
+    box-shadow: $bxs;
+}
+
+@mixin font($fz:18px, $fw:400, $lh:50px, $cl: black) {
+    font-size: $fz;
+    font-weight: $fw;
+    color: $cl;
+    line-height: $lh;
+}
+
+@mixin flex($jc:center, $ai:center, $fd:row) {
+    display: flex;
+    justify-content: $jc;
+    align-items: $ai;
+    flex-direction: $fd;
+}
+

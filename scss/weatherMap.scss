@@ -1,0 +1,340 @@
+@import 'function';
+
+$light_color: #87CEFA;
+$dark_color: #FFFF;
+$scan_color_gradient: linear-gradient(180deg, $dark_color, $light_color);
+
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+     background-image: url(/img/skyBg.jpg);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: auto;
+}
+@media (max-width: 650px) {
+    html, body{
+        background-repeat: repeat-y;
+    }
+}
+
+ul, li {
+    list-style: none;
+}
+.ham-menu{
+    display: none;
+    position: absolute;
+    top: 2%;
+    left: 8%;
+}
+
+.ham_bar{
+    @include size(50px, 50px, 10px, 5px 5px 20px whitesmoke);
+    @include flex(unset, center, unset);
+    background-image: url(../img/icons8-adventures.gif);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.ham_bar_all{
+    position: absolute;
+    top: 130%;
+    left: -120%;
+    display: none;
+}
+@media (max-width: 869px) {
+    .ham-menu{
+        display: block;
+    }
+    #ham-menu-switch:checked~.ham_bar_all{
+        @include flex(center, center, column);
+    }
+    .ham_bar_all li{
+        @include size(80px, 40px, 10px, 5px 5px 20px whitesmoke);
+        @include font(20px, bold, unset, whitesmoke);
+        @include flex(center, center, unset);
+        margin-bottom: 20px;
+    }   
+}
+
+a {
+   text-decoration: none;
+   color: unset;
+}
+
+.side-menu {
+    position: absolute;
+    @include flex(unset, unset, column);
+    top: 6%;
+    left: 6%;
+}
+
+.side-menu li {
+    @include size(140px, 50px, 10px, 5px 5px 20px whitesmoke);
+    @include font(20px, bold, none, whitesmoke);
+    @include flex(center, center, unset);
+    letter-spacing: 1px;
+    // background-color: lightgrey;
+    margin-bottom: 30px;
+}
+
+@media (max-width: 1440px) {
+    .side-menu li {
+        width: 100px;
+        height: 35px; 
+        font-size: 20px;
+        // background-color: lightgrey;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 1280px) {
+    .side-menu{
+        left: 2%;
+    }
+}
+
+@media (max-width: 1024px) {
+    .side-menu {
+        position: fixed;
+        top: 2%;
+        padding: 0 10px;
+        margin-bottom: 10px;
+        flex-direction: row;
+        // background-color: #ddd;
+    }
+    .side-menu li {
+        margin-bottom: unset;
+        margin-right: 30px;
+    }
+}
+@media (max-width: 869px) {
+    .side-menu{
+        display: none;
+    }
+}
+
+header li:hover {
+    // border: 3px dashed peru;
+    cursor: pointer;
+    transform: translate(-5px, -5px);
+    // transition: -1s;
+}
+
+
+main {
+    position: absolute;
+    top: 5%;
+    left: 20%;
+    width: 45%;
+    height: 75%;
+    min-width: 40%;
+    // background-color: peru;
+    @include flex(center, flex-start, row);
+    flex-wrap: wrap;
+    padding: 0;
+}
+@media (max-width: 1280px) {
+    main {
+        left: 18%;
+    }
+}
+
+@media (max-width: 1024px) {
+    main{
+        top: 15%;
+        left: 50%;
+        width: 50%;    
+    }
+}
+@media (max-width: 869px) {
+    main{
+        top: 12%;
+        left: 25%;
+        min-width: 60%;
+        justify-content: flex-start;
+    }
+}
+
+.scroll {
+    overflow-y: scroll;
+}
+
+main img {
+    width: 80px;
+    height: 80px;
+    transform: translateX(-70%);
+    margin-bottom: 20px
+}
+
+.card {
+    @include size(110px, 250px, 10px, none);
+    @include font(16px, bold, 20px);
+    @include flex(space-around, flex-end, column);
+    background: $scan_color_gradient;
+    margin: 0 20px 10px;
+    padding-right: 10px;
+    white-space: nowrap;
+}
+
+.card hr {
+    width: 100%;
+}
+
+.card li {
+    margin-bottom: 10px;
+}
+
+
+footer {
+    position: fixed;
+    top: 78%;
+    left: 28%;
+    @include flex(center, flex-end, row);
+    @include font(12px, 100, 10px, white);
+}
+
+.timeContent {
+    transform: translate(-160%, 20%);
+}
+
+.timer1 {
+    @include size(200px, 100px, 10px, none);
+    @include font(18px, bold, 30px, white);
+    @include flex(center, flex-end, none);
+    // background-color: lightgrey;
+    // border: 1px dashed grey;
+}
+
+@media (max-width: 1600px) {
+    footer {
+        left: 20%;
+    }
+
+    .timeContent {
+        transform: translate(-100%, 15%);
+    }
+}
+
+@media (max-width: 1440px) {
+    .timeContent {
+        transform: translate(-100%, 15%);
+    }
+
+    .timer1 {
+        @include size(200px, 100px, none, none);
+        @include font(14px, bold, 20px, white);
+        // background-color: #ddd;
+    }
+}
+@media (max-width: 1024px) {
+    footer{
+        left: 7%;
+        margin-right: 50px;   
+    }
+    .timeContent {
+        transform: translate(-40%, 15%);
+    }
+
+}
+@media (max-width: 624px) {
+    footer{
+        flex-direction: column;
+    }
+    .timeContent {
+        transform: translate(10%, 15%);
+        margin-bottom: 20px;
+    }
+}
+
+
+.svg-map {
+    position: absolute;
+    top: 20%;
+    left: 66%;
+}
+
+
+@media (max-width: 1440px) {
+    .svg-map {
+        top: 10%;
+        left: 63%;
+    }
+}
+
+@media (max-width: 1280px) {
+    .svg-map {
+        left: 58%;
+    }
+}
+
+@media (max-width: 1024px) {
+    .svg-map{
+        left: -3%;
+    }
+}
+
+@media (max-width: 869px) {
+    .svg-map{
+        display: none;
+    }
+}
+
+
+.svg-map path {
+    fill: #FFF;
+    transition: 0.5s;
+    cursor: cell;
+}
+
+.svg-map path:hover {
+    fill: #87CEFA;
+    transform: translate(-5px, -5px);
+}
+
+nav{
+    display: none;
+    position: absolute;
+    left: 84%;
+    top: 2%;
+}
+.map_bar{
+    @include size(50px, 50px, 10px, 5px 5px 20px whitesmoke);
+    @include flex(unset, center, unset);
+    background-image: url(../img/icons8-place-marker.gif);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.svg_bar{
+    position: absolute;
+    top: 130%;
+    left: -400%;
+    display: none;
+    // background-color: lightgray;
+    border-radius: 10px;
+    opacity: 0.9;
+}
+
+@media (max-width: 869px) {
+    nav{
+        display: block;
+    }
+    #map-switch:checked~.svg_bar{
+        display: block;
+        z-index: 10;
+    }
+    .svg_bar path:hover {
+        fill: #87CEFA;
+        transform: translate(-5px, -5px);
+    }
+}
+
+
