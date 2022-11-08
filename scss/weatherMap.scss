@@ -199,6 +199,10 @@ footer {
     left: 28%;
     @include flex(center, flex-end, row);
     @include font(12px, 100, 10px, white);
+
+    span{
+        text-align: center;
+    }
 }
 
 .timeContent {
@@ -246,9 +250,13 @@ footer {
 @media (max-width: 624px) {
     footer{
         flex-direction: column;
+        margin-right: unset;
+        justify-content: center;
+        align-items: center;
+        padding: unset;
         .timeContent {
-            transform: translate(0%, 25%);
-            margin-bottom: 20px;
+            @include flex(center, center);
+            transform: translate(0%, 20%);
             .timer1{
                 width: 100%;
                 @include font(12px, bold, 20px, white);
@@ -261,7 +269,16 @@ footer {
 
         span{
             text-align: center;
-            font-size: 9px;
+            font-size: 10px;
+        }
+    }
+}
+@media (max-width: 480px) {
+    footer{
+        .timeContent{
+            .timer1{
+                @include font(10px, bold, 20px, white);
+            }
         }
     }
 }
