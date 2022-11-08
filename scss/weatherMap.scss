@@ -206,9 +206,9 @@ footer {
 }
 
 .timer1 {
-    @include size(200px, 100px, 10px, none);
+    @include size(400px, 100px, 10px, none);
     @include font(18px, bold, 30px, white);
-    @include flex(center, flex-end, none);
+    @include flex(center, flex-end, column);
     // background-color: lightgrey;
     // border: 1px dashed grey;
 }
@@ -237,20 +237,32 @@ footer {
 @media (max-width: 1024px) {
     footer{
         left: 7%;
-        margin-right: 50px;   
+        margin-right: 50px;  
+        .timeContent {
+            transform: translate(-40%, 15%);
+        } 
     }
-    .timeContent {
-        transform: translate(-40%, 15%);
-    }
-
 }
 @media (max-width: 624px) {
     footer{
         flex-direction: column;
-    }
-    .timeContent {
-        transform: translate(10%, 15%);
-        margin-bottom: 20px;
+        .timeContent {
+            transform: translate(0%, 25%);
+            margin-bottom: 20px;
+            .timer1{
+                width: 100%;
+                @include font(12px, bold, 20px, white);
+                @include flex(center, flex-end);
+                li{
+                    padding: 10px;
+                }
+            }
+        }
+
+        span{
+            text-align: center;
+            font-size: 9px;
+        }
     }
 }
 

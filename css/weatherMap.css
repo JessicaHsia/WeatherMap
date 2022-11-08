@@ -236,7 +236,7 @@ footer {
 }
 
 .timer1 {
-  width: 200px;
+  width: 400px;
   height: 100px;
   border-radius: 10px;
   box-shadow: none;
@@ -247,7 +247,7 @@ footer {
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  flex-direction: none;
+  flex-direction: column;
 }
 
 @media (max-width: 1600px) {
@@ -278,7 +278,7 @@ footer {
     left: 7%;
     margin-right: 50px;
   }
-  .timeContent {
+  footer .timeContent {
     transform: translate(-40%, 15%);
   }
 }
@@ -286,9 +286,27 @@ footer {
   footer {
     flex-direction: column;
   }
-  .timeContent {
-    transform: translate(10%, 15%);
+  footer .timeContent {
+    transform: translate(0%, 25%);
     margin-bottom: 20px;
+  }
+  footer .timeContent .timer1 {
+    width: 100%;
+    font-size: 12px;
+    font-weight: bold;
+    color: white;
+    line-height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-direction: row;
+  }
+  footer .timeContent .timer1 li {
+    padding: 10px;
+  }
+  footer span {
+    text-align: center;
+    font-size: 9px;
   }
 }
 .svg-map {

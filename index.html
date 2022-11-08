@@ -295,11 +295,10 @@
                 let starTime = weather.records.location[0].weatherElement[0].time[0].startTime;
                 let endTime = weather.records.location[0].weatherElement[0].time[0].endTime;
                 timeContent.innerHTML = `
-                <div class="timer1">Forecast Day Rang
-                    <br>
-                    ${starTime} 
-                    <br>
-                    ${endTime}
+                <div class="timer1">
+                    <li>Forecast Day Rang</li>
+                    <li> ${starTime} </li>
+                    <li> ${endTime}</li>
                 </div>
                 `
                 locations.forEach(ellocations => {
